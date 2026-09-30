@@ -45,10 +45,7 @@ export default async function Page(props: PageProps) {
   // Section models are fetched with the same urlPath, so they can be
   // targeted to specific URLs in Builder.
   const get = (model: string) =>
-    builder
-      // Set prerender to false to return JSON instead of HTML
-      .get(model, { userAttributes, prerender: false })
-      .toPromise();
+    builder.get(model, { userAttributes }).toPromise();
 
   const [announcementBar, header, content, footer] = await Promise.all([
     get("announcement-bar"),

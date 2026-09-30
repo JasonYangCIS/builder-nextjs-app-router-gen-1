@@ -11,7 +11,7 @@ export default async function DocsPage() {
   // The sidebar is a Builder section model; urlPath lets you target
   // different sidebars to different docs paths (e.g. "/docs/*").
   const sidebar = await builder
-    .get("sidebar", { userAttributes: { urlPath: "/docs" }, prerender: false })
+    .get("sidebar", { userAttributes: { urlPath: "/docs" } })
     .toPromise();
 
   return (
